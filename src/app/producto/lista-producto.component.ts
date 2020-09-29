@@ -50,7 +50,7 @@ export class ListaProductoComponent implements OnInit {
           'OK',
           'Producto eliminado',
           'success'
-        )
+        );
       // For more information about handling dismissals please visit
       // https://sweetalert2.github.io/#handling-dismissals
       } else if (result.dismiss === Swal.DismissReason.cancel) {
@@ -58,9 +58,9 @@ export class ListaProductoComponent implements OnInit {
           'Cancelado',
           'Producto a salvo',
           'error'
-        )
+        );
       }
-    })
+    });
   }
 
 
