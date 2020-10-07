@@ -30,7 +30,7 @@ export class NuevoProductoComponent implements OnInit {
         this.toastr.success(data.message, 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'
         });
-        this.router.navigate(['/']);
+        this.volver();
       },
       err => {
         this.toastr.error(err.error.message, 'Fail', {
@@ -41,7 +41,7 @@ export class NuevoProductoComponent implements OnInit {
   }
 
   volver(): void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/lista']);
   }
 
 }

@@ -1,0 +1,42 @@
+<app-menu></app-menu>
+
+<div class="container d-flex justify-content-center">
+    <div class="card">
+        <div class="card-header">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/login"><i class="fas fa-sign-in-alt"></i> Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" routerLink="/registro"><i class="fas fa-user-plus"></i> Crear Cuenta</a>
+                </li>
+              </ul>
+        </div>
+
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label for="nombreUsuario">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="nombre" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="nombreUsuario">Nombre de usuario/Email</label>
+                    <input type="text" class="form-control" name="nombreUsuario" id="nombreUsuario" autocomplete="off" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="email" id="email" autocomplete="off" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" class="form-control" name="password" id="password" required>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-outline-success btn-block">
+                        <i class="fas fa-user-plus"></i> Crear Cuenta
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

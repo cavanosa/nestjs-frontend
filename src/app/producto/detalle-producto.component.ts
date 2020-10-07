@@ -36,7 +36,7 @@ export class DetalleProductoComponent implements OnInit {
   }
 
   volver(): void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/lista']);
   }
 
 }

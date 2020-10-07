@@ -30,7 +30,7 @@ export class EditarProductoComponent implements OnInit {
         this.toastr.error(err.error.message, 'Fail', {
           timeOut: 3000,  positionClass: 'toast-top-center',
         });
-        this.router.navigate(['/']);
+        this.volver();
       }
     );
   }
@@ -42,7 +42,7 @@ export class EditarProductoComponent implements OnInit {
         this.toastr.success(data.message, 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'
         });
-        this.router.navigate(['/']);
+        this.volver();
       },
       err => {
         this.toastr.error(err.error.message, 'Fail', {
@@ -53,7 +53,7 @@ export class EditarProductoComponent implements OnInit {
   }
 
   volver(): void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/lista']);
   }
 
 }
