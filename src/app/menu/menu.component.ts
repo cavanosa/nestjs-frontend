@@ -1,6 +1,7 @@
 import { Router } from '@angular/router';
 import { TokenService } from './../services/token.service';
 import { Component, OnInit } from '@angular/core';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-menu',
@@ -10,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class MenuComponent implements OnInit {
 
   isLogged: boolean;
+  isAdmin: boolean;
 
   constructor(
     private tokenService: TokenService,
@@ -17,7 +19,8 @@ export class MenuComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.tokenService.isLogged() ? this.isLogged = true : this.isLogged = false;
+    this.isLogged = this.tokenService.isLogged();
+    this.isAdmin = this.tokenService.isAdmin();
   }
 
   logOut(): void {

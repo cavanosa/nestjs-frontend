@@ -1,3 +1,4 @@
+import { TokenService } from './../services/token.service';
 import { ProductoService } from './../services/producto.service';
 import { Producto } from './../models/producto';
 import { Component, OnInit } from '@angular/core';
@@ -15,12 +16,16 @@ export class ListaProductoComponent implements OnInit {
 
   listaVacia = undefined;
 
+  isAdmin: boolean;
+
   constructor(
-    private productoService: ProductoService
+    private productoService: ProductoService,
+    private tokenService: TokenService
     ) { }
 
   ngOnInit(): void {
     this.cargarProductos();
+    this.isAdmin = this.tokenService.isAdmin();
   }
 
   cargarProductos(): void {
