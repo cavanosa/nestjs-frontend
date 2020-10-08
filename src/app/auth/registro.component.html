@@ -5,34 +5,38 @@
         <div class="card-header">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                  <a class="nav-link" routerLink="/login"><i class="fas fa-sign-in-alt"></i> Login</a>
+                    <a class="nav-link" routerLink="/login"><i class="fas fa-sign-in-alt"></i> Login</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" routerLink="/registro"><i class="fas fa-user-plus"></i> Crear Cuenta</a>
+                    <a class="nav-link active" routerLink="/registro"><i class="fas fa-user-plus"></i> Crear Cuenta</a>
                 </li>
-              </ul>
+            </ul>
         </div>
 
         <div class="card-body">
-            <form>
+            <form #f="ngForm" novalidate (ngSubmit)="onRegister()">
                 <div class="form-group">
                     <label for="nombreUsuario">Nombre</label>
-                    <input type="text" class="form-control" name="nombre" id="nombre" autocomplete="off">
+                    <input type="text" class="form-control" name="nombre" id="nombre" autocomplete="off"
+                        [(ngModel)]="nombre">
                 </div>
                 <div class="form-group">
                     <label for="nombreUsuario">Nombre de usuario/Email</label>
-                    <input type="text" class="form-control" name="nombreUsuario" id="nombreUsuario" autocomplete="off" required>
+                    <input type="text" class="form-control" name="nombreUsuario" id="nombreUsuario" autocomplete="off"
+                        required [(ngModel)]="nombreUsuario">
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" name="email" id="email" autocomplete="off" required>
+                    <input type="email" class="form-control" name="email" id="email" autocomplete="off" required
+                        [(ngModel)]="email">
                 </div>
                 <div class="form-group">
                     <label for="password">Contraseña</label>
-                    <input type="password" class="form-control" name="password" id="password" required>
+                    <input type="password" class="form-control" name="password" id="password" required
+                        [(ngModel)]="password">
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-outline-success btn-block">
+                    <button class="btn btn-outline-success btn-block" type="submit" [disabled]="!f.valid">
                         <i class="fas fa-user-plus"></i> Crear Cuenta
                     </button>
                 </div>

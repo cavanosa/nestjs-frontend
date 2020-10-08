@@ -14,7 +14,7 @@
         </div>
 
         <div class="card-body">
-            <form>
+            <form #f="ngForm" novalidate (ngSubmit)="onLogin()">
                 <div class="form-group">
                     <label for="nombreUsuario">Nombre de usuario/Email</label>
                     <input type="text" class="form-control" name="nombreUsuario" id="nombreUsuario" autocomplete="off"
@@ -26,7 +26,7 @@
                         [(ngModel)]="password">
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-outline-success btn-block" (click)="onLogin()">
+                    <button class="btn btn-outline-success btn-block" type="submit" [disabled]="!f.valid">
                         <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
                     </button>
                 </div>
