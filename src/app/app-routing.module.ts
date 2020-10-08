@@ -1,3 +1,4 @@
+import { LoginGuard } from './guards/login.guard';
 import { RegistroComponent } from './auth/registro.component';
 import { LoginComponent } from './auth/login.component';
 import { HomeComponent } from './home/home.component';
@@ -15,8 +16,8 @@ const routes: Routes = [
   {path: 'detalle/:id', component: DetalleProductoComponent},
   {path: 'nuevo', component: NuevoProductoComponent},
   {path: 'editar/:id', component: EditarProductoComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'registro', component: RegistroComponent},
+  {path: 'login', component: LoginComponent, canActivate: [LoginGuard]},
+  {path: 'registro', component: RegistroComponent, canActivate: [LoginGuard]},
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 
