@@ -1,3 +1,4 @@
+import { TokenDto } from './../models/token.dto';
 import { NuevoUsuarioDto } from './../models/nuevo-usuario.dto';
 import { Observable } from 'rxjs';
 import { LoginUsuarioDto } from './../models/login-usuario.dto';
@@ -20,5 +21,9 @@ export class AuthService {
 
   registro(dto: NuevoUsuarioDto): Observable<any> {
     return this.httpClient.post<any>(this.authURL + 'nuevo', dto);
+  }
+
+  refresh(dto: TokenDto): Observable<any> {
+    return this.httpClient.post<any>(this.authURL + 'refresh', dto);
   }
 }
